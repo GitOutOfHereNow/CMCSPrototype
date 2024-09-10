@@ -15,39 +15,83 @@
     <div class="container mt-4">
         <h2 class="text-center mb-4">Admin Dashboard</h2>
 
-        <div class="table-responsive">
-            <table class="table table-hover table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Claim ID</th>
-                        <th>Lecturer</th>
-                        <th>Hours Worked</th>
-                        <th>Total Amount</th>
-                        <th>Status</th>
-                        <th>View Attachments</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Ezekiel Lecturer</td>
-                        <td>20</td>
-                        <td>R4000000</td>
-                        <td>
-                            <span class="badge badge-warning">Pending</span>
-                        </td>
-                        <td>
-                            <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(1)">View Attachments</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Approve the claim">Approve</button>
-                            <button class="btn btn-danger btn-sm ml-2" data-toggle="tooltip" data-placement="top" title="Reject the claim">Reject</button>
-                        </td>
-                    </tr>
-                    <!-- Added Dummy values for sake of demonstration -->
-                </tbody>
-            </table>
+        <div class="card shadow-lg mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="text-center">Pending Claims</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Lecturer</th>
+                                <th>Hours Worked</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>View Attachments</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ezekiel Lecturer</td>
+                                <td>20</td>
+                                <td>R4000000</td>
+                                <td>
+                                    <span class="badge badge-warning">Pending</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(1)">View Attachments</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Approve the claim">Approve</button>
+                                    <button class="btn btn-danger btn-sm ml-2" data-toggle="tooltip" data-placement="top" title="Reject the claim">Reject</button>
+                                </td>
+                            </tr>
+                            <!-- Added Dummy values for sake of demonstration -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-lg">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Past Claims</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Lecturer</th>
+                                <th>Hours Worked</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>View Attachments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>Ezekiel Lecturer</td>
+                                <td>15</td>
+                                <td>R3000000</td>
+                                <td>
+                                    <span class="badge badge-success">Approved</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(2)">View Attachments</button>
+                                </td>
+                            </tr>
+                            <!-- Added Dummy values for sake of demonstration -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -62,7 +106,6 @@
         function viewAttachments(claimId) {
             // Placeholder for viewing attachments; this will eventually be either a modal or redirect to a separate page
             alert("Viewing attachments for claim ID: " + claimId);
-          
         }
     </script>
 

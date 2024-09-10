@@ -2,36 +2,136 @@
     ViewData["Title"] = "Lecturer Dashboard";
 }
 
-<div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-            <div class="card shadow-lg">
-                <div class="card-header bg-primary text-white text-center">
-                    <h2>Lecturer Dashboard</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/custom-styles.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Lecturer Dashboard</h2>
+
+        <!-- Claim Submission Form -->
+        <div class="card shadow-lg mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="text-center">Submit a Claim</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="#">
+                    <div class="form-group mb-3">
+                        <label for="hoursWorked" class="form-label">Hours Worked:</label>
+                        <input type="number" class="form-control" id="hoursWorked" placeholder="Enter hours worked" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="upload" class="form-label">Upload Supporting Document:</label>
+                        <input type="file" class="form-control" id="upload" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success px-4">Submit Claim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pending Claims Table -->
+        <div class="card shadow-lg mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="text-center">Pending Claims</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Lecturer</th>
+                                <th>Hours Worked</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>View Attachments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ezekiel Lecturer</td>
+                                <td>20</td>
+                                <td>R4000000</td>
+                                <td>
+                                    <span class="badge badge-warning">Pending</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(1)">View Attachments</button>
+                                </td>
+                            </tr>
+                            <!-- Added Dummy values for sake of demonstration -->
+                        </tbody>
+                    </table>
                 </div>
-                <div class="card-body">
-                    <form method="post" action="#">
-                        <div class="form-group mb-3">
-                            <label for="hoursWorked" class="form-label">Hours Worked:</label>
-                            <input type="number" class="form-control" id="hoursWorked" placeholder="Enter hours worked" required>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="upload" class="form-label">Upload Supporting Document:</label>
-                            <input type="file" class="form-control" id="upload" required>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-success px-4">Submit Claim</button>
-                        </div>
-                    </form>
+            </div>
+        </div>
+
+        <!-- Past Claims Table -->
+        <div class="card shadow-lg">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Past Claims</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Lecturer</th>
+                                <th>Hours Worked</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>View Attachments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>Ezekiel Lecturer</td>
+                                <td>15</td>
+                                <td>R3000000</td>
+                                <td>
+                                    <span class="badge badge-success">Approved</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(2)">View Attachments</button>
+                                </td>
+                            </tr>
+                            <!-- Added Dummy values for sake of demonstration -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<audio id="background-music" loop>
-    <source src="~/NewFolder/background-music.mp3" autoplay loop>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        function viewAttachments(claimId) {
+            // Placeholder for viewing attachments; this will eventually be either a modal or redirect to a separate page
+            alert("Viewing attachments for claim ID: " + claimId);
+        }
+    </script>
+
+    <audio id="background-music" loop>
+        <source src="~/NewFolder/background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-</audio>
+    </audio>
 
     <!-- JavaScript for music playback -->
     <script>
@@ -51,3 +151,5 @@
             askForMusic();
         };
     </script>
+</body>
+</html>
