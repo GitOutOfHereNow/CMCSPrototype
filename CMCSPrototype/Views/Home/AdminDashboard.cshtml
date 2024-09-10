@@ -24,6 +24,7 @@
                         <th>Hours Worked</th>
                         <th>Total Amount</th>
                         <th>Status</th>
+                        <th>View Attachments</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -35,6 +36,9 @@
                         <td>R4000000</td>
                         <td>
                             <span class="badge badge-warning">Pending</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="View attachments" onclick="viewAttachments(1)">View Attachments</button>
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Approve the claim">Approve</button>
@@ -54,6 +58,36 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+        function viewAttachments(claimId) {
+            // Placeholder for viewing attachments; this will eventually be either a modal or redirect to a separate page
+            alert("Viewing attachments for claim ID: " + claimId);
+          
+        }
+    </script>
+
+    <audio id="background-music" loop>
+        <source src="~/NewFolder/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript for music playback -->
+    <script>
+        function askForMusic() {
+            let playMusic = confirm("Would you like some music while you log a claim?");
+            let audio = document.getElementById("background-music");
+            audio.volume = 0.5;
+
+            if (playMusic) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        window.onload = function () {
+            askForMusic();
+        };
     </script>
 </body>
 </html>
