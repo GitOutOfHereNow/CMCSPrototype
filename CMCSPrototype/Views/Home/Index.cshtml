@@ -1,12 +1,31 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/custom-styles.css">
+</head>
+<body>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to the Contract Monthly Claim System</h1>
-    <p>
-        <a href="/Home/LecturerDashboard" class="btn btn-primary">Lecturer Dashboard</a>
-        <a href="/Home/AdminDashboard" class="btn btn-secondary">Admin Dashboard</a>
-        <a href="/Home/ClaimTracking" class="btn btn-info">Claim Tracking</a>
-    </p>
-</div>
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="text-center">
+            <h1 class="display-4 font-weight-bold mb-4">Welcome to the Contract Monthly Claim System</h1>
+            <p class="lead mb-4">Choose an option to get started:</p>
+            <div class="btn-group-vertical" role="group" aria-label="Button group">
+                <a href="/Home/LecturerDashboard" class="btn btn-primary btn-lg mb-3">Lecturer Dashboard</a>
+                <a href="/Home/AdminDashboard" class="btn btn-secondary btn-lg mb-3">Admin Dashboard</a>
+                <!-- <a href="/Home/ClaimTracking" class="btn btn-info btn-lg">Claim Tracking</a> -->
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
